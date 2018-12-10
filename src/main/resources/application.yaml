@@ -1,24 +1,39 @@
-# ÅäÖÃfreemarker
+# é…ç½®freemarker
 spring:
   freemarker:
-    # ÉèÖÃÄ£°åºó×ºÃû
+    # è®¾ç½®æ¨¡æ¿åç¼€å
     suffix: .ftl
-    # ÉèÖÃÎÄµµÀàĞÍ
+    # è®¾ç½®æ–‡æ¡£ç±»å‹
     content-type: text/html
-    # ÉèÖÃÒ³Ãæ±àÂë¸ñÊ½
+    # è®¾ç½®é¡µé¢ç¼–ç æ ¼å¼
     charset: UTF-8
-    # ÉèÖÃÒ³Ãæ»º´æ
+    # è®¾ç½®é¡µé¢ç¼“å­˜
     cache: false
-    # ÉèÖÃftlÎÄ¼şÂ·¾¶
-    template-loader-path:
-      - classpath:/templates
+    # è®¾ç½®ftlæ–‡ä»¶è·¯å¾„
+    template-loader-path: classpath:/templates/
+    check-template-location: true
+    expose-request-attributes: true
+    expose-session-attributes: true
     request-context-attribute: request
-  # ÉèÖÃ¾²Ì¬ÎÄ¼şÂ·¾¶£¬js,cssµÈ
+  # è®¾ç½®é™æ€æ–‡ä»¶è·¯å¾„ï¼Œjs,cssç­‰
   mvc:
-  static-path-pattern: /static/**
+    static-path-pattern: /static/**
 
 server:
   port: 8080
   servlet:
     context-path: /springboot-java
+#springboot actuator ç›‘æ§ç«¯å£
+management:
+  server:
+    port: 8100
+    servlet:
+      context-path: /springboot-java
+  #é»˜è®¤åªå¼€å¯healthå’Œinfo,è®¾ç½®ä¸º*,åˆ™åŒ…å«æ‰€æœ‰çš„webå…¥å£ç«¯ç‚¹
+#  endpoints:
+#    web:
+#      exposure:
+#        include: *
+
+
 

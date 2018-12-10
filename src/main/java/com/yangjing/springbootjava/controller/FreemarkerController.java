@@ -3,6 +3,7 @@ package com.yangjing.springbootjava.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -35,6 +36,13 @@ public class FreemarkerController {
         mv.addObject("name", "jack");
         mv.setViewName("test");
         return mv;
+    }
+
+    @RequestMapping(value = "/login")
+    public String toLogin(Model model){
+        log.info("====>>跳转login页面");
+
+        return "login";
     }
 
 }
