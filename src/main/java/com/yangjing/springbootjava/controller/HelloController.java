@@ -26,4 +26,9 @@ public class HelloController {
     public String index2(HttpServletRequest request){
         return "index2";
     }
+
+    @RequestMapping("/index3")
+    public String index3(HttpServletRequest request){
+        return "index3";
+    }
 }
